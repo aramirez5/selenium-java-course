@@ -6,7 +6,7 @@
 
 ## What is selenium-java-course ? ☕ + 🥒
 
-<b>karate-course</b> is a project that contains tests made with the Selenium Java and Cucumber
+<b>selenium-java-course</b> is a project that contains tests made with the Selenium Java and Cucumber
 
 ## Building and installation 🔧
 
