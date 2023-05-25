@@ -24,11 +24,8 @@ jobs:
           chmod +x ./scripts/InstallChrome.sh
           ./scripts/InstallChrome.sh
 
-      - name: Build project
-        run: gradle build
-
       - name: Run Cucumber tests
-        run: gradle test -Dcucumber.options="--tags @Amazon"
+        run: gradle test -Dcucumber.options="--tags @Amazon" --info
 
       - name: Upload Cucumber report
         uses: actions/upload-artifact@v3

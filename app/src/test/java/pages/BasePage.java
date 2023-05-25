@@ -21,7 +21,10 @@ public class BasePage {
 
     static {
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("start-maximized");
+        //chromeOptions.addArguments("start-maximized");
+        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-dev-shm-usage");
+        chromeOptions.addArguments("--headless");
         System.setProperty("webdriver.chrome.driver", "C:/selenium/chromedriver.exe");
         driver = new ChromeDriver(chromeOptions);
         wait = new WebDriverWait(driver, 10);
