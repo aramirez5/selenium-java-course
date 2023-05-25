@@ -5,7 +5,7 @@ public class AmazonSearchPage extends BasePage {
     public String cookiesButton = "//input[@id='sp-cc-accept']";
     public String searchBox = "//input[@id='twotabsearchtextbox']";
     public String searchButton = "//input[@id='nav-search-submit-button']";
-    public String pageNumberTwo = "//*[@id='search']/div[1]/div[1]/div/span[1]/div[1]/div[63]/div/div/span/a[1]";
+    public String pageNumberTwo = "//*[@id='search']/div[1]/div[1]/div/span[1]/div[1]/div[65]/div/div/span/a[1]";
     public String thirdResult = "//*[@id='search']/div[1]/div[1]/div/span[1]/div[1]/div[4]/div";
     public String addToCartButton = "//input[@id='add-to-cart-button']";
     public String addedMessageText = "//*[@id='NATC_SMART_WAGON_CONF_MSG_SUCCESS']/span";
