@@ -21,6 +21,7 @@ public class BasePage {
 
     static {
         ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("start-maximized");
         System.setProperty("webdriver.chrome.driver", "C:/selenium/chromedriver.exe");
         driver = new ChromeDriver(chromeOptions);
         wait = new WebDriverWait(driver, 10);

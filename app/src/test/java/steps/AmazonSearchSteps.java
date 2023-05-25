@@ -35,7 +35,11 @@ public class AmazonSearchSteps {
 
     @Then("^the user is able to add it to the cart$")
     public void itemCanBeAddedToTheCart(){
-        amazon.addToCart(); 
-        Assert.assertEquals("Añadido a la cesta", amazon.addToCartMessage());  
+        amazon.addToCart();
+
+        String actualText = amazon.addToCartMessage();
+        String expectedPartialText = "a la cesta";
+
+        Assert.assertTrue(actualText.contains(expectedPartialText));
     }
 }

@@ -26,7 +26,7 @@ jobs:
           sudo apt install ./google-chrome-stable_current_amd64.deb
 
       - name: Run Cucumber tests
-        run: gradle test -Dcucumber.options="--tags @TradMe"
+        run: gradle test -Dcucumber.options="--tags @Amazon"
 
       - name: Upload Cucumber report
         uses: actions/upload-artifact@v3
