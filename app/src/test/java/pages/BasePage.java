@@ -13,6 +13,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class BasePage {
 
     protected static WebDriver driver;
@@ -20,12 +22,13 @@ public class BasePage {
     private static Actions action;
 
     static {
+        WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         //chromeOptions.addArguments("start-maximized");
         chromeOptions.addArguments("--no-sandbox");
         chromeOptions.addArguments("--disable-dev-shm-usage");
         chromeOptions.addArguments("--headless");
-        System.setProperty("webdriver.chrome.driver", "C:/selenium/chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "C:/selenium/chromedriver.exe");
         driver = new ChromeDriver(chromeOptions);
         wait = new WebDriverWait(driver, 10);
     }
