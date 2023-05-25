@@ -19,6 +19,11 @@ jobs:
           java-version: "11"
           distribution: "temurin"
 
+      - name: Install Google Chrome
+        run: |
+          chmod +x ./scripts/InstallChrome.sh
+          ./scripts/InstallChrome.sh
+
       - name: Run Cucumber tests
         run: gradle test -Dcucumber.options="--tags @TradMe"
 

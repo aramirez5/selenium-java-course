@@ -8,3 +8,7 @@ build
 .vscode
 gradlew
 gradlew.bat
+
+/app/target
+/app/test-output
+/app/bin
