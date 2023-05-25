@@ -21,9 +21,11 @@ jobs:
 
       - name: Install Google Chrome
         run: |
-          set -ex
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo apt install ./google-chrome-stable_current_amd64.deb
+          chmod +x ./scripts/InstallChrome.sh
+          ./scripts/InstallChrome.sh
+
+      - name: Build project
+        run: gradle build
 
       - name: Run Cucumber tests
         run: gradle test -Dcucumber.options="--tags @Amazon"
