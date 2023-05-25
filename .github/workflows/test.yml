@@ -20,7 +20,7 @@ jobs:
           distribution: "temurin"
 
       - name: Run Cucumber tests
-        run: gradle testsCucumber -Dcucumber.options="--tags @TradMe"
+        run: gradle test -Dcucumber.options="--tags @TradMe"
 
       - name: Upload Cucumber report
         uses: actions/upload-artifact@v3
