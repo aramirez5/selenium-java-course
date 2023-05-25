@@ -15,5 +15,5 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    - name: Build with Gradley
+    - name: Build with Gradle
       run: test -Dcucumber.options="--tags @TradMe"
