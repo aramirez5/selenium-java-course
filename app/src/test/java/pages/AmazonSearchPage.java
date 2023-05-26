@@ -57,7 +57,7 @@ public class AmazonSearchPage extends BasePage {
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         try {
-            FileUtils.copyFile(screenshot, new File("C:\\laragon\\www\\selenium-test\\app\\build\\reports\\tests\\test\\testscreenshot.png"));
+            FileUtils.copyFile(screenshot, new File("build\\reports\\tests\\test\\screenshot.png"));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
