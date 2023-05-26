@@ -23,14 +23,11 @@ public class BasePage {
 
     static {
         WebDriverManager.chromedriver().setup();
+        
         ChromeOptions chromeOptions = new ChromeOptions();
-
         chromeOptions.addArguments("--no-sandbox");
         chromeOptions.addArguments("--disable-gpu");
         chromeOptions.addArguments("--disable-dev-shm-usage");
-
-        // * Uncomment to full screen browser
-        // chromeOptions.addArguments("start-maximized");
 
         // * Uncomment to enable headless mode
         chromeOptions.addArguments("--headless");
@@ -39,6 +36,8 @@ public class BasePage {
         // System.setProperty("webdriver.chrome.driver", "C:/selenium/chromedriver.exe");
         
         driver = new ChromeDriver(chromeOptions);
+        driver.manage().window().maximize();
+        
         wait = new WebDriverWait(driver, 60);
     }
 
