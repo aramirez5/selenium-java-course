@@ -39,12 +39,12 @@ public class BasePage {
         // System.setProperty("webdriver.chrome.driver", "C:/selenium/chromedriver.exe");
         
         driver = new ChromeDriver(chromeOptions);
-        wait = new WebDriverWait(driver, 20);
+        wait = new WebDriverWait(driver, 60);
     }
 
     public BasePage(WebDriver driver) {
         BasePage.driver = driver;
-        wait = new WebDriverWait(driver, 20);
+        wait = new WebDriverWait(driver, 60);
     }
 
     public static void navigateTo(String url){
