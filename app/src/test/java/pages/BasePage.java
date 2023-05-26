@@ -30,7 +30,7 @@ public class BasePage {
         chromeOptions.addArguments("--disable-dev-shm-usage");
 
         // * Uncomment to enable headless mode
-        // chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--headless");
 
         // * Uncomment to get local webdriver
         // System.setProperty("webdriver.chrome.driver", "C:/selenium/chromedriver.exe");
