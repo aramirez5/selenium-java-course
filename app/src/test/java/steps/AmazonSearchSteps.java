@@ -14,7 +14,6 @@ public class AmazonSearchSteps {
     @Given("^the user navigates to Amazon website$")
     public void navigateToAmazon(){
         amazon.navigateToAmazon();
-        amazon.acceptCookies();
     }
 
     @And("^searches for (.+)$")
@@ -36,10 +35,14 @@ public class AmazonSearchSteps {
     @Then("^the user is able to add it to the cart$")
     public void itemCanBeAddedToTheCart(){
         amazon.addToCart();
+        Assert.assertEquals("Added to Cart", amazon.addToCartMessage());  
+    }
 
-        String actualText = amazon.addToCartMessage();
-        String expectedPartialText = "a la cesta";
+    @Then("^the user see a message that confirms it$")
+    public void confirmMessage(){
+        String actualText = amazon.confirmMessage();
+        String expectedPartialText = "You are on amazon.com";
 
-        Assert.assertTrue(actualText.contains(expectedPartialText));
+        Assert.assertTrue(actualText.contains(expectedPartialText));  
     }
 }

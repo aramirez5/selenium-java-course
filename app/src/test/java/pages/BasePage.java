@@ -24,18 +24,25 @@ public class BasePage {
     static {
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
-        //chromeOptions.addArguments("start-maximized");
+
+        // * Uncomment to full screen browser
+        // chromeOptions.addArguments("start-maximized");
+
+        // * Uncomment to enable headless mode
         chromeOptions.addArguments("--no-sandbox");
         chromeOptions.addArguments("--disable-dev-shm-usage");
         chromeOptions.addArguments("--headless");
-        //System.setProperty("webdriver.chrome.driver", "C:/selenium/chromedriver.exe");
+
+        // * Uncomment to get local webdriver
+        // System.setProperty("webdriver.chrome.driver", "C:/selenium/chromedriver.exe");
+        
         driver = new ChromeDriver(chromeOptions);
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, 20);
     }
 
     public BasePage(WebDriver driver) {
         BasePage.driver = driver;
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, 20);
     }
 
     public static void navigateTo(String url){
@@ -129,9 +136,10 @@ public class BasePage {
         driver.findElement(By.linkText(linkText)).click();
     }
 
-    public void goToElement(String locator){
-        WebElement element = driver.findElement(By.xpath(locator));
+    public void clickAndGoToElement(String locator){
+        WebElement element = driver.findElement(By.cssSelector(locator));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(locator))).click();
     }
 
     public int dropdownSize(String locator){

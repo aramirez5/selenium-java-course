@@ -5,17 +5,18 @@ public class AmazonSearchPage extends BasePage {
     public String cookiesButton = "//input[@id='sp-cc-accept']";
     public String searchBox = "//input[@id='twotabsearchtextbox']";
     public String searchButton = "//input[@id='nav-search-submit-button']";
-    public String pageNumberTwo = "//*[@id='search']/div[1]/div[1]/div/span[1]/div[1]/div[65]/div/div/span/a[1]";
-    public String thirdResult = "//*[@id='search']/div[1]/div[1]/div/span[1]/div[1]/div[4]/div";
-    public String addToCartButton = "//input[@id='add-to-cart-button']";
-    public String addedMessageText = "//*[@id='NATC_SMART_WAGON_CONF_MSG_SUCCESS']/span";
+    public String pageNumberTwo = "a[aria-label='Go to page 2']";
+    public String thirdResult = "(//div[@data-component-type='s-search-result'])[3]";
+    public String addToCartButton = "//*[@id='add-to-cart-button']";
+    public String addedMessageText = "//*[@id='attachDisplayAddBaseAlert']/div/h4";
+    public String confirmMessage = "//span[contains(text(),'You are on amazon.com. You can also shop on Amazon')]";
 
     public AmazonSearchPage() {
         super(driver);
     }
 
     public void navigateToAmazon(){
-        navigateTo("https://www.amazon.es/");
+        navigateTo("https://www.amazon.com/?language=en_US");
     }
 
     public void acceptCookies(){
@@ -31,8 +32,7 @@ public class AmazonSearchPage extends BasePage {
     }
 
     public void goToPageTwo(){
-        goToElement(pageNumberTwo);
-        clickElement(pageNumberTwo);
+        clickAndGoToElement(pageNumberTwo);
     }
 
     public void pickThirdItem(){
@@ -46,4 +46,8 @@ public class AmazonSearchPage extends BasePage {
     public String addToCartMessage(){
        return textFromElement(addedMessageText);
     }
+
+    public String confirmMessage(){
+        return textFromElement(confirmMessage);
+     }
 }
