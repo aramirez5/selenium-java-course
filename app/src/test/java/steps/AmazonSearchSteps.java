@@ -41,7 +41,7 @@ public class AmazonSearchSteps {
     @Then("^the user see a message that confirms it$")
     public void confirmMessage(){
         String actualText = amazon.confirmMessage();
-        String expectedPartialText = "You are on amazon.com";
+        String expectedPartialText = "Top Deal";
 
         Assert.assertTrue(actualText.contains(expectedPartialText));  
     }

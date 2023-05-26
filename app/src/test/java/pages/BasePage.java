@@ -25,12 +25,13 @@ public class BasePage {
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
 
+        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-dev-shm-usage");
+
         // * Uncomment to full screen browser
         // chromeOptions.addArguments("start-maximized");
 
         // * Uncomment to enable headless mode
-        chromeOptions.addArguments("--no-sandbox");
-        chromeOptions.addArguments("--disable-dev-shm-usage");
         chromeOptions.addArguments("--headless");
 
         // * Uncomment to get local webdriver
