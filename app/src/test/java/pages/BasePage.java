@@ -30,10 +30,10 @@ public class BasePage {
         chromeOptions.addArguments("--disable-dev-shm-usage");
 
         // * Uncomment to full screen browser
-        chromeOptions.addArguments("start-maximized");
+        // chromeOptions.addArguments("start-maximized");
 
         // * Uncomment to enable headless mode
-        // chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--headless");
 
         // * Uncomment to get local webdriver
         // System.setProperty("webdriver.chrome.driver", "C:/selenium/chromedriver.exe");

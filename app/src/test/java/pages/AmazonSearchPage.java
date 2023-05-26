@@ -1,5 +1,11 @@
 package pages;
 
+import java.io.File;
+import java.io.IOException;
+import org.openqa.selenium.OutputType;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.TakesScreenshot;
+
 public class AmazonSearchPage extends BasePage {
     
     public String cookiesButton = "//input[@id='sp-cc-accept']";
@@ -48,6 +54,14 @@ public class AmazonSearchPage extends BasePage {
     }
 
     public String confirmMessage(){
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+        try {
+            FileUtils.copyFile(screenshot, new File("C:\\laragon\\www\\selenium-test\\app\\build\\reports\\tests\\test\\testscreenshot.png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
         return textFromElement(confirmMessage);
      }
 }
