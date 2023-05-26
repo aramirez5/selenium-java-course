@@ -15,7 +15,7 @@ public class AmazonSearchPage extends BasePage {
     public String thirdResult = "(//div[@data-component-type='s-search-result'])[3]";
     public String addToCartButton = "//*[@id='add-to-cart-button']";
     public String addedMessageText = "//*[@id='attachDisplayAddBaseAlert']/div/h4";
-    public String confirmMessage = "//h2[contains(text(),'Top Deal')]";
+    public String confirmMessage = "//span[contains(text(),'You are on amazon.com. You can also shop on Amazon')]";
 
     public AmazonSearchPage() {
         super(driver);

@@ -29,7 +29,7 @@ jobs:
           ./scripts/InstallChrome.sh
 
       - name: Run Cucumber tests
-        run: gradle test -Dcucumber.options="--tags @Amazon" --info
+        run: gradle test -Dcucumber.options="--tags @Google" --info
 
       - name: Upload Cucumber report
         uses: actions/upload-artifact@v3

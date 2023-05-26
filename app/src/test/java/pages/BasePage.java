@@ -30,7 +30,7 @@ public class BasePage {
         chromeOptions.addArguments("--disable-dev-shm-usage");
 
         // * Uncomment to enable headless mode
-        chromeOptions.addArguments("--headless");
+        // chromeOptions.addArguments("--headless");
 
         // * Uncomment to get local webdriver
         // System.setProperty("webdriver.chrome.driver", "C:/selenium/chromedriver.exe");
@@ -38,12 +38,12 @@ public class BasePage {
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         
-        wait = new WebDriverWait(driver, 60);
+        wait = new WebDriverWait(driver, 10);
     }
 
     public BasePage(WebDriver driver) {
         BasePage.driver = driver;
-        wait = new WebDriverWait(driver, 60);
+        wait = new WebDriverWait(driver, 10);
     }
 
     public static void navigateTo(String url){

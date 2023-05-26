@@ -29,4 +29,9 @@ public class GoogleSteps {
     public void validateResults(){
        Assert.assertEquals("Google", google.firstResult());     
     }
+
+    @Then("^I see a message that confirms it$")
+    public void confirmMessage(){
+       Assert.assertEquals("Gmail", google.confirmMessage());     
+    }
 }

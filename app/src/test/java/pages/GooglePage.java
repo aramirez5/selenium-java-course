@@ -6,6 +6,7 @@ public class GooglePage extends BasePage {
     private String searchButton = "/html[1]/body[1]/div[1]/div[3]/form[1]/div[1]/div[1]/div[2]/div[2]/div[7]/center[1]/input[1]";
     private String searchTextField = "//textarea[@id='APjFqb']";
     private String googleFirstResult = "//body/div[@id='main']/div[@id='cnt']/div[@id='rcnt']/div[@id='center_col']/div[@id='res']/div[@id='search']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/h3[1]";
+    private String confirmMessage = "//a[contains(text(),'Gmail')]";
 
     public GooglePage() {
         super(driver);
@@ -29,5 +30,9 @@ public class GooglePage extends BasePage {
 
     public String firstResult(){
         return textFromElement(googleFirstResult);
+    }
+
+    public String confirmMessage(){
+        return textFromElement(confirmMessage);
     }
 }
