@@ -26,13 +26,14 @@ public class BasePage {
         ChromeOptions chromeOptions = new ChromeOptions();
 
         chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-gpu");
         chromeOptions.addArguments("--disable-dev-shm-usage");
 
         // * Uncomment to full screen browser
-        // chromeOptions.addArguments("start-maximized");
+        chromeOptions.addArguments("start-maximized");
 
         // * Uncomment to enable headless mode
-        chromeOptions.addArguments("--headless");
+        // chromeOptions.addArguments("--headless");
 
         // * Uncomment to get local webdriver
         // System.setProperty("webdriver.chrome.driver", "C:/selenium/chromedriver.exe");
