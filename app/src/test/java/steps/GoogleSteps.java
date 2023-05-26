@@ -12,7 +12,7 @@ public class GoogleSteps {
     @Given("^I am on the Google search page$")
     public void navigateToGoogle(){
         google.navigateToGoogle();
-        google.acceptCookies();
+        //google.acceptCookies();
     }
 
     @When("^I enter a search criteria$")
